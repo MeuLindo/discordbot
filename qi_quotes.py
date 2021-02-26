@@ -39,5 +39,15 @@ quotes = [
             'Quote': '...What became known as the Waterloo tooth. Became almost your patriotic duty, if you lost a tooth, to fit in, that of a dead soldier from Waterloo. There was these scavengers, who went around the battle field, pulling out the teeth of the dead bodies, selling them back in barrels, and people would buy them and fit them into the holes where their teeth were and use them.',
             'EP': 'J.06'
         },
+         {
+            'Author': 'Johnny Vegas',
+            'Quote': 'You write in the wall with your own feces... people start listings to you.',
+            'EP': 'J.07'
+        },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': 'Jogging is apparently very good for the memory. It does seems that a few days of running can lead to the growth of hundreds of thousends of new brain cells, in the memory forming part of the brain.',
+            'EP': 'J.08'
+        },
         
 ]
