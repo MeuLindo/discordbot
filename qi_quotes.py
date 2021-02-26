@@ -24,5 +24,20 @@ quotes = [
             'Quote': 'There are, in the latest count, I believe 642 species of animals that exibit homosexual activitie. But there is only one specie that exibits homophobia, and that is Mankind.',
             'EP': 'J.10'
         },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': 'Elephants only have two knees, the front two are elbows.',
+            'EP': 'J.06'
+        },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': 'Very oddly, the only mammals that have chins, are humans and elephants.',
+            'EP': 'J.06'
+        },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': '...What became known as the Waterloo tooth. Became almost your patriotic duty, if you lost a tooth, to fit in, that of a dead soldier from Waterloo. There was these scavengers, who went around the battle field, pulling out the teeth of the dead bodies, selling them back in barrels, and people would buy them and fit them into the holes where their teeth were and use them.',
+            'EP': 'J.06'
+        },
         
 ]
