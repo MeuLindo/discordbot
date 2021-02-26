@@ -21,13 +21,13 @@ async def quite_interesting(ctx):
     episode = '- Ep: ' + choose['EP']
     send_message = await ctx.send(author + '\n' + quote + '\n' + episode)
     
-    emoji = '\N{THUMBS UP SIGN}'
-    await send_message.add_reaction(emoji)
+    await send_message.add_reaction('🤖')
     
 @bot.command(name='qc')
 async def quarentena_gaming(ctx):
     choose = random.choice(qc)
     send_message = await ctx.send(choose)
+    await send_message.add_reaction('🦑')
 
 @bot.command(name='smoke')
 async def quarentena_gaming(ctx):
