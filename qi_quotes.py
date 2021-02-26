@@ -49,5 +49,20 @@ quotes = [
             'Quote': 'Jogging is apparently very good for the memory. It does seems that a few days of running can lead to the growth of hundreds of thousends of new brain cells, in the memory forming part of the brain.',
             'EP': 'J.08'
         },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': '8 hours on the lou, burns as many calories as 1 hour of jogging.',
+            'EP': 'J.08'
+        },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': 'In Japan it is very traditional, to adopt an adult young man, ages between 25 and 30. Only 2% of adoptees in Japan are infant.',
+            'EP': 'J.05'
+        },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': 'Yo mama so fat, that she could easily have a care and control diet and regular exercise.',
+            'EP': 'J.15'
+        },
         
 ]
