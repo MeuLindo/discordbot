@@ -74,5 +74,10 @@ quotes = [
             'Quote': 'Nobody knows why moths are attracted to light.',
             'EP': 'Invertebrates'
         },
+        {
+            'Author': 'Stephen Fry',
+            'Quote': 'In medical colleges, they usually teach, that half of what the medical students are going to learn, will be considered untrue in about ten or twenty years. And this is knows by academics as the "Half life of fact". On QI an estimate of 7% of what I tell you this evening will be showned to be untrue in a years time',
+            'EP': 'Knowledge'
+        },
         
 ]
