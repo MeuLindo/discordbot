@@ -19,6 +19,6 @@ qc = [
     'In the detail.',
     'NA',
     'Mato 35 y perco.',
-    '30% de um spray é a fé que você deposita nele.'
+    '30% de um spray é a fé que você deposita nele.',
 
 ]
