@@ -11,7 +11,7 @@ qc = [
     'Só lancei acredita q uma hora vai',
     'Mano, tem um newba tentando subir janela ha duas horas',
     'Mamei',
-    'Vai mamar.'
+    'Vai mamar.',
     'Não para no tetris!',
     'Badaragens',
     'Só :crocodile:',
