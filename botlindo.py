@@ -36,6 +36,14 @@ async def quarentena_gaming(ctx):
 @bot.command(name='bomb')
 async def quarentena_gaming(ctx):
     await ctx.send('O que acontece no bomb fica no bomb.')
+    
+@bot.command(name='flash')
+async def quarentena_gaming(ctx):
+    await ctx.send('Pode ir que eu tenho a perfeitinha.')
+
+@bot.command(name='spray')
+async def quarentena_gaming(ctx):
+    await ctx.send('Tarik do céu!')
 
 
 bot.run(TOKEN)
