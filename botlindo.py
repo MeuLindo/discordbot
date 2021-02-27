@@ -45,5 +45,9 @@ async def quarentena_gaming(ctx):
 async def quarentena_gaming(ctx):
     await ctx.send('Tarik do céu!')
 
+@bot.command(name='noscope')
+async def quarentena_gaming(ctx):
+    await ctx.send('https://www.youtube.com/watch?v=kBN7T5V-yGk')
+
 
 bot.run(TOKEN)
