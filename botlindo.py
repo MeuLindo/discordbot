@@ -12,6 +12,10 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='!')
 
+@bot.event
+async def on_ready():
+    print(f'{bot.user.name} has connected to Discord!')
+
 @bot.command(name='qi')
 async def quite_interesting(ctx):
     
@@ -49,5 +53,31 @@ async def quarentena_gaming(ctx):
 async def quarentena_gaming(ctx):
     await ctx.send('https://www.youtube.com/watch?v=kBN7T5V-yGk')
 
+@bot.command(name='bala')
+async def quarentena_gaming(ctx):
+    await ctx.send('*INVOCANDO* - @everyone')
+
+bot.lobby = '**Lobby**:'
+
+@bot.command(name='lobby')
+async def quarentena_gaming(ctx, *players):
+    bot.lobby += '\n'.join(players) + '\n'
+    await ctx.send(bot.lobby)
+
+
+@bot.command(name='presente')
+async def quarentena_gaming(ctx):
+    user = str(ctx.author)
+    nome = '\n' + user.split('#')[0] 
+    if nome in bot.lobby:
+        await ctx.send(bot.lobby)
+    else:
+        bot.lobby += nome
+        await ctx.send(bot.lobby)
+
+@bot.command(name='resetlobby')
+async def quarentena_gaming(ctx):
+    bot.lobby = '**Lobby**:'
+    await ctx.send('Lobby foi resetado.')
 
 bot.run(TOKEN)
