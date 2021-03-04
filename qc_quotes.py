@@ -20,5 +20,5 @@ qc = [
     'NA',
     'Mato 35 y perco.',
     '30% de um spray é a fé que você deposita nele.',
-
+    'O que acontece lá, fica lá.',
 ]
