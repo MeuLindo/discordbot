@@ -3,6 +3,10 @@ import random
 from dotenv import load_dotenv
 from discord.ext import commands
 import discord
+import requests
+import xml.etree.ElementTree as ET
+import html2text
+
 
 from qi_quotes import quotes
 from qc_quotes import qc
@@ -10,11 +14,42 @@ from qc_quotes import qc
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
+
+
+def getWikiDay():
+    
+    S = requests.Session()
+
+    URL = "https://en.wikipedia.org/w/api.php?action=featuredfeed&format=json&feed=onthisday&utf8=1"
+
+    R = S.get(URL)
+    DATA = R.content
+    root = ET.fromstring(DATA)
+    
+    onThisDay = root[0][15][0].text
+    rawHtml = onThisDay = root[0][15][3].text
+
+    h = html2text.HTML2Text()
+    h.ignore_links = True
+    parsedHtml = h.handle(rawHtml)
+    cut = parsedHtml.split('More anniversaries:')[0]
+    
+    return cut
+
 bot = commands.Bot(command_prefix='!')
 
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
+
+
+@bot.command(name='hoje')
+async def quite_interesting(ctx):
+    wikiHoje = getWikiDay()
+    send_message = await ctx.send(wikiHoje)
+    
+    await send_message.add_reaction('🤖')
+
 
 @bot.command(name='qi')
 async def quite_interesting(ctx):
@@ -81,3 +116,7 @@ async def quarentena_gaming(ctx):
     await ctx.send('Lobby foi resetado.')
 
 bot.run(TOKEN)
+
+
+
+getWikiDay()
