@@ -43,7 +43,7 @@ async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
 
-@bot.command(name='hoje')
+@bot.command(name='hoje', help="")
 async def quite_interesting(ctx):
     wikiHoje = getWikiDay()
     send_message = await ctx.send(wikiHoje)
@@ -58,31 +58,31 @@ async def quite_interesting(ctx):
     author = '**' + choose['Author'] + ':**'
     quote = '*' + choose['Quote'] + '*'
     episode = '- Ep: ' + choose['EP']
-    send_message = await ctx.send(author + '\n' + quote + '\n' + episode)
+    send_message = await ctx.send(author + '\n' + quote + '\n' + episode, tts=True)
     
     await send_message.add_reaction('🤖')
     
 @bot.command(name='qc')
 async def quarentena_gaming(ctx):
     choose = random.choice(qc)
-    send_message = await ctx.send(choose)
+    send_message = await ctx.send(choose, tts=True)
     await send_message.add_reaction('🦑')
 
 @bot.command(name='smoke')
 async def quarentena_gaming(ctx):
-    await ctx.send('Essa smoke aí é pra ganhar espaço')
+    await ctx.send('Essa smoke aí é pra ganhar espaço.', tts=True)
 
 @bot.command(name='bomb')
 async def quarentena_gaming(ctx):
-    await ctx.send('O que acontece no bomb fica no bomb.')
+    await ctx.send('O que acontece no bomb fica no bomb.', tts=True)
     
 @bot.command(name='flash')
 async def quarentena_gaming(ctx):
-    await ctx.send('Pode ir que eu tenho a perfeitinha.')
+    await ctx.send('Pode ir que eu tenho a perfeitinha.', tts=True)
 
 @bot.command(name='spray')
 async def quarentena_gaming(ctx):
-    await ctx.send('Tarik do céu!')
+    await ctx.send('Tarik do céu!', tts=True)
 
 @bot.command(name='noscope')
 async def quarentena_gaming(ctx):
@@ -90,7 +90,7 @@ async def quarentena_gaming(ctx):
 
 @bot.command(name='bala')
 async def quarentena_gaming(ctx):
-    await ctx.send('*INVOCANDO* - @everyone')
+    await ctx.send('*INVOCANDO* - @everyone', tts=True)
 
 bot.lobby = '**Lobby**:'
 
