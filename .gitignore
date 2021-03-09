@@ -1,4 +1,4 @@
 /discord-bot
 __pycache__/
 .env
-/env
+/venv
