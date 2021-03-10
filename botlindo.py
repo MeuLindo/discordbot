@@ -115,7 +115,7 @@ async def quarentena_gaming(ctx):
     bot.lobby = '**Lobby**:'
     await ctx.send('Lobby foi resetado.')
 
-@bot.command(name='quote', brief='Adiciona uma quote pra lista.')
+@bot.command(name='quote', brief='Adiciona uma quote da lista.')
 async def quarentena_gaming(ctx, *quote_msg):
     
     quote = ' '.join(quote_msg)
@@ -129,8 +129,26 @@ async def quarentena_gaming(ctx, *quote_msg):
             f.write(f"qc = {str(qc)}")
         
         await ctx.send('Quote Adicionada.')
-        
 
+@bot.command(name='rmquote', brief='Remove uma quote da lista.')
+async def quarentena_gaming(ctx, *quote_msg):
+    
+    quote = ' '.join(quote_msg)
+
+    for item in qc:
+        achei = 0
+        if item == quote:
+            qc.remove(item)
+            with open('qc_quotes.py', 'w') as f:
+                f.write(f"qc = {str(qc)}")
+            
+            achei = 1
+            await ctx.send('Quote Removida.')
+        else:
+            achei = 0
+    
+    if not achei:
+        await ctx.send('Quote não ta na lista.')
 
 bot.run(TOKEN)
 
