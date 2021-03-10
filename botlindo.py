@@ -84,7 +84,7 @@ async def quarentena_gaming(ctx):
 async def quarentena_gaming(ctx):
     await ctx.send('Tarik do céu!', tts=True)
 
-@bot.command(name='noscope')
+@bot.command(name='noscope', brief='Video do Meu Lindo.')
 async def quarentena_gaming(ctx):
     await ctx.send('https://www.youtube.com/watch?v=kBN7T5V-yGk')
 
@@ -94,13 +94,13 @@ async def quarentena_gaming(ctx):
 
 bot.lobby = '**Lobby**:'
 
-@bot.command(name='lobby')
+@bot.command(name='lobby', brief='Cria um lobby [!lobby (jogador1 jogador2 ...)]')
 async def quarentena_gaming(ctx, *players):
     bot.lobby += '\n'.join(players) + '\n'
     await ctx.send(bot.lobby)
 
 
-@bot.command(name='presente')
+@bot.command(name='presente', brief='Se coloca no lobby criado.')
 async def quarentena_gaming(ctx):
     user = str(ctx.author)
     nome = '\n' + user.split('#')[0] 
@@ -110,10 +110,27 @@ async def quarentena_gaming(ctx):
         bot.lobby += nome
         await ctx.send(bot.lobby)
 
-@bot.command(name='resetlobby')
+@bot.command(name='resetlobby', brief='Reinicia a lista do lobby.')
 async def quarentena_gaming(ctx):
     bot.lobby = '**Lobby**:'
     await ctx.send('Lobby foi resetado.')
+
+@bot.command(name='quote', brief='Adiciona uma quote pra lista.')
+async def quarentena_gaming(ctx, *quote_msg):
+    
+    quote = ' '.join(quote_msg)
+
+    if quote in qc:
+        await ctx.send('Quote já ta na lista.')
+    else:
+        qc.append(quote)    
+    
+        with open('qc_quotes.py', 'w') as f:
+            f.write(f"qc = {str(qc)}")
+        
+        await ctx.send('Quote Adicionada.')
+        
+
 
 bot.run(TOKEN)
 
