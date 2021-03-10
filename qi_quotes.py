@@ -41,7 +41,7 @@ quotes = [
         },
          {
             'Author': 'Johnny Vegas',
-            'Quote': 'You write in the wall with your own feces... people start listings to you.',
+            'Quote': 'You write in the wall with your own feces... people start listining to you.',
             'EP': 'Journalism'
         },
         {
