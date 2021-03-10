@@ -52,7 +52,9 @@ def getBitcoinPrice():
     BTCBRL = (1/USDBTC) * USDBRL
     formatacaoBTCBRL = '{:,}'.format(round(BTCBRL))
 
-    return formatacaoBTCBRL
+    trocaVirgulaTemp = formatacaoBTCBRL.split(',')
+    trocaVirgula = '.'.join(trocaVirgulaTemp)
+    return trocaVirgula
 
 def getLitecoinPrice():
     
@@ -70,6 +72,10 @@ def getLitecoinPrice():
 
     LTCBRL = LTCUSD * USDBRL
     formatacaoLTCBRL = '{:,}'.format(round(LTCBRL))
+
+    trocaVirgulaTemp = formatacaoLTCBRL.split(',')
+    trocaVirgula = '.'.join(trocaVirgulaTemp)
+    return trocaVirgula
     
     return formatacaoLTCBRL
 
