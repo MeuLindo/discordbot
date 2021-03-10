@@ -50,7 +50,7 @@ def getBitcoinPrice():
     USDBTC = DATA["quotes"]["USDBTC"]
 
     BTCBRL = (1/USDBTC) * USDBRL
-    formatacaoBTCBRL = '{:,}'.format(round(BTCBRL))
+    formatacaoBTCBRL = '{:.}'.format(round(BTCBRL))
 
     return formatacaoBTCBRL
 
@@ -69,7 +69,7 @@ def getLitecoinPrice():
     LTCUSD = LITEDATA["market"]["ltc_usd"]
 
     LTCBRL = LTCUSD * USDBRL
-    formatacaoLTCBRL = '{:,}'.format(round(LTCBRL))
+    formatacaoLTCBRL = '{:.}'.format(round(LTCBRL))
     
     return formatacaoLTCBRL
 
