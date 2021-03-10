@@ -62,7 +62,7 @@ async def quite_interesting(ctx):
     
     await send_message.add_reaction('🤖')
     
-@bot.command(name='qc')
+@bot.command(name='qc', brief='Pega uma quote aleatória e lê ela em TTS.')
 async def quarentena_gaming(ctx):
     choose = random.choice(qc)
     send_message = await ctx.send(choose, tts=True)
