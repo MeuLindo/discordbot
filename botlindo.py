@@ -6,6 +6,7 @@ import discord
 import requests
 import xml.etree.ElementTree as ET
 import html2text
+import json
 
 
 from qi_quotes import quotes
@@ -36,6 +37,43 @@ def getWikiDay():
     
     return cut
 
+
+def getBitcoinPrice():
+    
+    S = requests.Session()
+
+    URLCURRENCY = "http://api.currencylayer.com/live?access_key=3096802859eab4748db45256d2c3aed1&format=1"
+
+    R = S.get(URLCURRENCY)
+    DATA = json.loads(R.content)
+    USDBRL = DATA["quotes"]["USDBRL"]
+    USDBTC = DATA["quotes"]["USDBTC"]
+
+    BTCBRL = (1/USDBTC) * USDBRL
+    formatacaoBTCBRL = '{:,}'.format(round(BTCBRL))
+
+    return formatacaoBTCBRL
+
+def getLitecoinPrice():
+    
+    S = requests.Session()
+
+    URLCURRENCY = "http://api.currencylayer.com/live?access_key=3096802859eab4748db45256d2c3aed1&format=1"
+    R = S.get(URLCURRENCY)
+    DATA = json.loads(R.content)
+    USDBRL = DATA["quotes"]["USDBRL"]
+    
+    URLLITECOIN = "https://www.litecoinpool.org/api?api_key=7f9cdb6341bea09d18cb8979fc57846d"
+    LR = S.get(URLLITECOIN)
+    LITEDATA = json.loads(LR.content)
+    LTCUSD = LITEDATA["market"]["ltc_usd"]
+
+    LTCBRL = LTCUSD * USDBRL
+    formatacaoLTCBRL = '{:,}'.format(round(LTCBRL))
+    
+    return formatacaoLTCBRL
+
+
 bot = commands.Bot(command_prefix='!')
 
 @bot.event
@@ -43,7 +81,18 @@ async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
 
-@bot.command(name='hoje', help="")
+@bot.command(name='bitcoin')
+async def quite_interesting(ctx):
+    bitHoje = getBitcoinPrice()
+    send_message = await ctx.send(f'**R${bitHoje}**')
+
+@bot.command(name='litecoin')
+async def quite_interesting(ctx):
+    liteHoje = getLitecoinPrice()
+    send_message = await ctx.send(f'**R${liteHoje}**')
+
+
+@bot.command(name='hoje')
 async def quite_interesting(ctx):
     wikiHoje = getWikiDay()
     send_message = await ctx.send(wikiHoje)
